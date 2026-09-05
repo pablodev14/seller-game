@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://ewiis0uwkr6l"]
+
+[ext_resource type="Script" uid="uid://cxm8vp3blq4l1" path="res://Characters/Goblin.cs" id="1_halkw"]
+[ext_resource type="Texture2D" uid="uid://fy1gp6d2lga4" path="res://Assets/Characters/Spear Goblin/Spear Goblin_Idle.png" id="1_pwexo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1nv5w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_halkw"]
+atlas = ExtResource("1_pwexo")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipa0k"]
+atlas = ExtResource("1_pwexo")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sk203"]
+atlas = ExtResource("1_pwexo")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghp7m"]
+atlas = ExtResource("1_pwexo")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kny0g"]
+atlas = ExtResource("1_pwexo")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vugmb"]
+atlas = ExtResource("1_pwexo")
+region = Rect2(1280, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prblh"]
+atlas = ExtResource("1_pwexo")
+region = Rect2(1536, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgnfo"]
+atlas = ExtResource("1_pwexo")
+region = Rect2(1792, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1nv5w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_halkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipa0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sk203")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghp7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kny0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vugmb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prblh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgnfo")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Goblin" type="StaticBody2D" unique_id=416268466]
+script = ExtResource("1_halkw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1938058045]
+shape = SubResource("CapsuleShape2D_1nv5w")
+
+[node name="Animator" type="AnimatedSprite2D" parent="." unique_id=1968120065]
+scale = Vector2(0.390625, 0.390625)
+sprite_frames = SubResource("SpriteFrames_1nv5w")
+frame_progress = 0.16767794
+flip_h = true

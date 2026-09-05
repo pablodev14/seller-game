@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://b47nftbxw7ym4"]
+
+[ext_resource type="Texture2D" uid="uid://plt5b1ypwlu5" path="res://Assets/Characters/Lancer/Lancer_Idle.png" id="1_isqhy"]
+[ext_resource type="Script" uid="uid://bo5argbj5yb5u" path="res://Characters/Lancer.cs" id="1_l4gi6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1nv5w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4gi6"]
+atlas = ExtResource("1_isqhy")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0dkd"]
+atlas = ExtResource("1_isqhy")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64gqm"]
+atlas = ExtResource("1_isqhy")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3y6u"]
+atlas = ExtResource("1_isqhy")
+region = Rect2(960, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_paugv"]
+atlas = ExtResource("1_isqhy")
+region = Rect2(1280, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypsr7"]
+atlas = ExtResource("1_isqhy")
+region = Rect2(1600, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umsyo"]
+atlas = ExtResource("1_isqhy")
+region = Rect2(1920, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0he1b"]
+atlas = ExtResource("1_isqhy")
+region = Rect2(2240, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6arr3"]
+atlas = ExtResource("1_isqhy")
+region = Rect2(2560, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yinot"]
+atlas = ExtResource("1_isqhy")
+region = Rect2(2880, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7wy1"]
+atlas = ExtResource("1_isqhy")
+region = Rect2(3200, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6nfi"]
+atlas = ExtResource("1_isqhy")
+region = Rect2(3520, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1nv5w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4gi6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0dkd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64gqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3y6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_paugv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypsr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umsyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0he1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6arr3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yinot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7wy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6nfi")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Lancer" type="StaticBody2D" unique_id=416268466]
+script = ExtResource("1_l4gi6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1938058045]
+shape = SubResource("CapsuleShape2D_1nv5w")
+
+[node name="Animator" type="AnimatedSprite2D" parent="." unique_id=1968120065]
+scale = Vector2(0.390625, 0.390625)
+sprite_frames = SubResource("SpriteFrames_1nv5w")
+frame_progress = 0.2369177

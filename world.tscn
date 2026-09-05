@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cv8ts2qrrullq"]
+
+[ext_resource type="PackedScene" uid="uid://b47nftbxw7ym4" path="res://Characters/lancer.tscn" id="1_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://ewiis0uwkr6l" path="res://Characters/goblin.tscn" id="2_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://us82i72uix3b" path="res://Characters/seller.tscn" id="3_036b0"]
+
+[node name="World" type="Node2D" unique_id=1354617957]
+
+[node name="Lancer" parent="." unique_id=416268466 instance=ExtResource("1_tlwt5")]
+position = Vector2(-76, -36)
+
+[node name="Goblin" parent="." unique_id=982076256 instance=ExtResource("2_aqk2v")]
+position = Vector2(82, -31)
+
+[node name="Seller" parent="." unique_id=2059657222 instance=ExtResource("3_036b0")]
+
+[node name="Camera2D" type="Camera2D" parent="Seller" unique_id=970398967]
+zoom = Vector2(5, 5)

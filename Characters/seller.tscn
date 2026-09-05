@@ -1,0 +1,210 @@
+[gd_scene format=3 uid="uid://us82i72uix3b"]
+
+[ext_resource type="Texture2D" uid="uid://bun5r8xjopgt6" path="res://Assets/Characters/Pawn/Pawn_Idle Wood.png" id="1_8w1kn"]
+[ext_resource type="Script" uid="uid://qonl2yv15po7" path="res://Characters/Seller.cs" id="1_l7bxd"]
+[ext_resource type="Texture2D" uid="uid://bwpmlxw756qoc" path="res://Assets/Characters/Pawn/Pawn_Run Wood.png" id="3_nasxu"]
+[ext_resource type="Texture2D" uid="uid://d0je5ansp5ra5" path="res://Assets/UI/Icons/Icon_02.png" id="4_ki1a8"]
+[ext_resource type="Texture2D" uid="uid://cd1sy4hri5m64" path="res://Assets/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="4_mx318"]
+[ext_resource type="Texture2D" uid="uid://c2ownyx7ifg10" path="res://Assets/UI/Icons/Icon_03.png" id="5_wkqjl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1nv5w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7bxd"]
+atlas = ExtResource("1_8w1kn")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nasxu"]
+atlas = ExtResource("1_8w1kn")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mx318"]
+atlas = ExtResource("1_8w1kn")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qc4p"]
+atlas = ExtResource("1_8w1kn")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ki1a8"]
+atlas = ExtResource("1_8w1kn")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkqjl"]
+atlas = ExtResource("1_8w1kn")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nb2g3"]
+atlas = ExtResource("1_8w1kn")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b83n0"]
+atlas = ExtResource("1_8w1kn")
+region = Rect2(1344, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04lvv"]
+atlas = ExtResource("3_nasxu")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oufgh"]
+atlas = ExtResource("3_nasxu")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kw3yb"]
+atlas = ExtResource("3_nasxu")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5gmt"]
+atlas = ExtResource("3_nasxu")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkw7b"]
+atlas = ExtResource("3_nasxu")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ciac"]
+atlas = ExtResource("3_nasxu")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1nv5w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7bxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nasxu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mx318")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qc4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ki1a8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkqjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nb2g3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b83n0")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04lvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oufgh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kw3yb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5gmt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkw7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ciac")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1nv5w"]
+size = Vector2(27, 31)
+
+[node name="Seller" type="CharacterBody2D" unique_id=2059657222]
+script = ExtResource("1_l7bxd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1557266662]
+shape = SubResource("CapsuleShape2D_1nv5w")
+
+[node name="Animator" type="AnimatedSprite2D" parent="." unique_id=1883912925]
+position = Vector2(-4.7683716e-07, -4.7683716e-07)
+scale = Vector2(0.41145837, 0.41145837)
+sprite_frames = SubResource("SpriteFrames_1nv5w")
+frame_progress = 0.46273634
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1465983038]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=11663689]
+position = Vector2(1.5, 0.5)
+shape = SubResource("RectangleShape2D_1nv5w")
+debug_color = Color(0.9985035, 0, 0.1519121, 0.41960785)
+
+[node name="Screen" type="CanvasLayer" parent="." unique_id=1072712554]
+
+[node name="WoodIndicator" type="TextureRect" parent="Screen" unique_id=1956949666]
+offset_left = 1063.0
+offset_top = 9.0
+offset_right = 1127.0
+offset_bottom = 73.0
+texture = ExtResource("4_ki1a8")
+
+[node name="Label" type="Label" parent="Screen/WoodIndicator" unique_id=1457771463]
+layout_mode = 0
+offset_left = 59.0
+offset_top = -6.0
+offset_right = 86.0
+offset_bottom = 18.0
+text = "2"
+
+[node name="CoinIndicator" type="TextureRect" parent="Screen" unique_id=1464413893]
+offset_left = 973.0
+offset_top = 8.0
+offset_right = 1037.0
+offset_bottom = 72.0
+texture = ExtResource("5_wkqjl")
+
+[node name="Label" type="Label" parent="Screen/CoinIndicator" unique_id=814311465]
+layout_mode = 0
+offset_left = 59.0
+offset_top = -6.0
+offset_right = 86.0
+offset_bottom = 18.0
+text = "2"
+
+[node name="XIndicator" type="TextureRect" parent="Screen" unique_id=1866905911]
+offset_left = 938.0
+offset_top = 565.0
+offset_right = 1133.0
+offset_bottom = 630.0
+texture = ExtResource("4_mx318")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Screen/XIndicator" unique_id=321935323]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 16.0
+offset_right = 152.0
+offset_bottom = 39.0
+text = "X para vender"
+
+[node name="ZIndicator" type="TextureRect" parent="Screen" unique_id=1115885178]
+offset_left = 28.0
+offset_top = 559.0
+offset_right = 223.0
+offset_bottom = 624.0
+texture = ExtResource("4_mx318")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Screen/ZIndicator" unique_id=18685640]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 16.0
+offset_right = 152.0
+offset_bottom = 39.0
+text = "Z para resumir"
+
+[connection signal="body_entered" from="Area2D" to="." method="_InteractWithNPC"]
+[connection signal="body_exited" from="Area2D" to="." method="_ExitNPC"]
