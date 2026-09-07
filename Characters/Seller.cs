@@ -1,15 +1,21 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class Seller : CharacterBody2D
 {
+    private const int InitialWoodCounts = 20;
+    private const float MovementSpeed = 100f;
+
     private AnimatedSprite2D _animator;
     private TextureRect _xIndicator;
     private Label _woodIndicator;
-    public int WoodCounts { get; private set; } = 20;
+    public int WoodCounts { get; private set; } = InitialWoodCounts;
     private Label _coinIndicator;
     private int _coinCounts = 0;
     private Node2D _npc;
+
+    private readonly List<Transaction> _transactions = new();
 
     public override void _Ready()
     {
@@ -30,7 +36,7 @@ public partial class Seller : CharacterBody2D
     {
         var move = Input.GetVector("move_left", "move_right", "move_up", "move_down");
 
-        Velocity = move * 100;
+        Velocity = move * MovementSpeed;
 
         if (Velocity.X != 0 || Velocity.Y != 0)
         {
@@ -52,24 +58,92 @@ public partial class Seller : CharacterBody2D
 
         MoveAndSlide();
 
-        if (_xIndicator.Visible && Input.IsActionJustPressed("sell"))
+        HandleTransactionInput();
+        HandleHistoryInput();
+    }
+
+    private void HandleTransactionInput()
+    {
+        if (!_xIndicator.Visible || !Input.IsActionJustPressed("sell"))
         {
-            if (_npc is null) return;
-
-            if (_npc is IBuyer buyer)
-            {
-                buyer.Buy(this);
-            }
-
-            if (_npc is IThief thief)
-            {
-                thief.Steal(this);
-            }
+            return;
         }
 
+        if (_npc is null)
+        {
+            return;
+        }
+
+        if (_npc is not NPC npc)
+        {
+            return;
+        }
+
+        if (npc is IBuyer buyer)
+        {
+            if (buyer.Buy(this))
+            {
+                RegisterSale(npc);
+            }
+
+            return;
+        }
+
+        if (npc is IThief thief && thief.Steal(this))
+        {
+            RegisterTheft(npc);
+        }
+    }
+
+    private void HandleHistoryInput()
+    {
         if (Input.IsActionJustPressed("show_resume"))
         {
-            GD.Print("Imprimir transacciones");
+            PrintTransactionHistory();
+        }
+    }
+
+    private void RegisterSale(NPC npc)
+    {
+        Transaction transaction = _transactions.Find(item => item.NPC == npc);
+
+        if (transaction is null)
+        {
+            transaction = new Sale(npc);
+            _transactions.Add(transaction);
+        }
+
+        transaction.IncreaseTotal();
+    }
+
+    private void RegisterTheft(NPC npc)
+    {
+        Transaction transaction = _transactions.Find(item => item.NPC == npc);
+
+        if (transaction is null)
+        {
+            transaction = new Theft(npc);
+            _transactions.Add(transaction);
+        }
+
+        transaction.IncreaseTotal();
+    }
+
+    private void PrintTransactionHistory()
+    {
+        if (_transactions.Count == 0)
+        {
+            GD.Print("No hay transacciones registradas.");
+            return;
+        }
+
+        foreach (Transaction transaction in _transactions)
+        {
+            GD.Print(
+                $"{transaction.NPCName} | " +
+                $"{transaction.TransactionType} | " +
+                $"Total: {transaction.TotalCounts}"
+            );
         }
     }
 
@@ -88,17 +162,22 @@ public partial class Seller : CharacterBody2D
         _npc = null;
     }
 
-    public void DiscountWood()
+    public bool TryDiscountWood()
     {
-        if (WoodCounts <= 0) return;
+        if (WoodCounts <= 0)
+        {
+            return false;
+        }
 
         WoodCounts--;
         _woodIndicator.Text = WoodCounts.ToString();
+
+        return true;
     }
 
-    public void IncreaseCoin()
+    public void IncreaseCoin(int amount)
     {
-        _coinCounts++;
+        _coinCounts += amount;
         _coinIndicator.Text = _coinCounts.ToString();
     }
 }

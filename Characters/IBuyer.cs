@@ -1,5 +1,5 @@
 public interface IBuyer
 {
     int Price { get; }
-    void Buy(Seller seller);
+    bool Buy(Seller seller);
 }

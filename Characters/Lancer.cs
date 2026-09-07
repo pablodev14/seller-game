@@ -6,11 +6,15 @@ public partial class Lancer : NPC, IBuyer
 
     public int Price => _price;
 
-    public void Buy(Seller seller)
+    public bool Buy(Seller seller)
     {
-        if (seller.WoodCounts <= 0) return;
+        if (!seller.TryDiscountWood())
+        {
+            return false;
+        }
 
-        seller.DiscountWood();
-        seller.IncreaseCoin();
+        seller.IncreaseCoin(Price);
+
+        return true;
     }
 }

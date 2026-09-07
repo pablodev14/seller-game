@@ -1,0 +1,134 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\USER\\Desktop\\seller-game\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AD349D40-8C64-47C4-A796-D43E9880784A}|SellerGame.csproj|c:\\users\\user\\desktop\\seller-game\\characters\\monk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD349D40-8C64-47C4-A796-D43E9880784A}|SellerGame.csproj|solutionrelative:characters\\monk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD349D40-8C64-47C4-A796-D43E9880784A}|SellerGame.csproj|c:\\users\\user\\desktop\\seller-game\\characters\\lancer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD349D40-8C64-47C4-A796-D43E9880784A}|SellerGame.csproj|solutionrelative:characters\\lancer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD349D40-8C64-47C4-A796-D43E9880784A}|SellerGame.csproj|c:\\users\\user\\desktop\\seller-game\\characters\\seller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD349D40-8C64-47C4-A796-D43E9880784A}|SellerGame.csproj|solutionrelative:characters\\seller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD349D40-8C64-47C4-A796-D43E9880784A}|SellerGame.csproj|c:\\users\\user\\desktop\\seller-game\\characters\\goblin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD349D40-8C64-47C4-A796-D43E9880784A}|SellerGame.csproj|solutionrelative:characters\\goblin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD349D40-8C64-47C4-A796-D43E9880784A}|SellerGame.csproj|c:\\users\\user\\desktop\\seller-game\\characters\\ithief.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD349D40-8C64-47C4-A796-D43E9880784A}|SellerGame.csproj|solutionrelative:characters\\ithief.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD349D40-8C64-47C4-A796-D43E9880784A}|SellerGame.csproj|c:\\users\\user\\desktop\\seller-game\\characters\\ibuyer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD349D40-8C64-47C4-A796-D43E9880784A}|SellerGame.csproj|solutionrelative:characters\\ibuyer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16A82FF7-F9A7-4E60-9E60-A34F9254A5BF}|Elementos de la soluci\u00F3n{16A82FF7-F9A7-4E60-9E60-A34F9254A5BF}|C:\\USERS\\USER\\DESKTOP\\SELLER-GAME\\Transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16A82FF7-F9A7-4E60-9E60-A34F9254A5BF}|Elementos de la soluci\u00F3n{16A82FF7-F9A7-4E60-9E60-A34F9254A5BF}|solutionrelative:Transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Lancer.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\seller-game\\Characters\\Lancer.cs",
+              "RelativeDocumentMoniker": "Characters\\Lancer.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\seller-game\\Characters\\Lancer.cs",
+              "RelativeToolTip": "Characters\\Lancer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-07T17:25:29.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Seller.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\seller-game\\Characters\\Seller.cs",
+              "RelativeDocumentMoniker": "Characters\\Seller.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\seller-game\\Characters\\Seller.cs",
+              "RelativeToolTip": "Characters\\Seller.cs",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAuwLYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-07T17:17:58.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IThief.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\seller-game\\Characters\\IThief.cs",
+              "RelativeDocumentMoniker": "Characters\\IThief.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\seller-game\\Characters\\IThief.cs",
+              "RelativeToolTip": "Characters\\IThief.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-07T17:13:47.007Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IBuyer.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\seller-game\\Characters\\IBuyer.cs",
+              "RelativeDocumentMoniker": "Characters\\IBuyer.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\seller-game\\Characters\\IBuyer.cs",
+              "RelativeToolTip": "Characters\\IBuyer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-07T17:13:06.966Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Transaction.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\seller-game\\Transaction.cs",
+              "RelativeDocumentMoniker": "Transaction.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\seller-game\\Transaction.cs",
+              "RelativeToolTip": "Transaction.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAowCYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-07T17:09:40.24Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Goblin.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\seller-game\\Characters\\Goblin.cs",
+              "RelativeDocumentMoniker": "Characters\\Goblin.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\seller-game\\Characters\\Goblin.cs",
+              "RelativeToolTip": "Characters\\Goblin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-07T17:00:59.133Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Monk.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\seller-game\\Characters\\Monk.cs",
+              "RelativeDocumentMoniker": "Characters\\Monk.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\seller-game\\Characters\\Monk.cs",
+              "RelativeToolTip": "Characters\\Monk.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-07T16:37:19.695Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

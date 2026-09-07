@@ -1,4 +1,4 @@
 public interface IThief
 {
-    void Steal(Seller seller);
+    bool Steal(Seller seller);
 }

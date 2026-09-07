@@ -2,11 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://b47nftbxw7ym4" path="res://Characters/lancer.tscn" id="1_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://ewiis0uwkr6l" path="res://Characters/goblin.tscn" id="2_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://4nj8cy26rh21" path="res://Characters/monk.tscn" id="2_dwbse"]
 [ext_resource type="PackedScene" uid="uid://us82i72uix3b" path="res://Characters/seller.tscn" id="3_036b0"]
 
 [node name="World" type="Node2D" unique_id=1354617957]
 
-[node name="Lancer" parent="." unique_id=416268466 instance=ExtResource("1_tlwt5")]
+[node name="Monk" parent="." unique_id=416268466 instance=ExtResource("2_dwbse")]
+position = Vector2(0, 60)
+_price = 10
+
+[node name="Lancer" parent="." unique_id=1276576224 instance=ExtResource("1_tlwt5")]
 position = Vector2(-76, -36)
 
 [node name="Goblin" parent="." unique_id=982076256 instance=ExtResource("2_aqk2v")]
