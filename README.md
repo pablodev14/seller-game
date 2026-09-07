@@ -21,61 +21,55 @@ El jugador controla a **Seller**, un vendedor que se acerca a NPC y presiona **X
 | `X` | Interactuar con el NPC cercano |
 | `Z` | Imprimir el historial de transacciones en la pestaña **Salida** de Godot |
 
-## 🧩 Diseño orientado a objetos
+> 🧠 **Ruta del refactor:** primero se eliminó la duplicación de los NPC; después se modelaron sus capacidades con interfaces; finalmente se añadieron Monk, Goblin y el historial de transacciones.
 
-```mermaid
-classDiagram
-    class NPC {
-        <<base>>
-        #AnimatedSprite2D _animator
+## 🧬 Paso 1 · Clase base `NPC`
+
+La primera refactorización creó una clase base para representar el comportamiento común de los personajes no jugables:
+
+```csharp
+public partial class NPC : StaticBody2D
+{
+    protected AnimatedSprite2D _animator;
+
+    public override void _Ready()
+    {
+        _animator = GetNode<AnimatedSprite2D>("Animator");
+        _animator.Play("default");
     }
-
-    class IBuyer {
-        <<interface>>
-        +int Price
-        +bool Buy(Seller seller)
-    }
-
-    class IThief {
-        <<interface>>
-        +bool Steal(Seller seller)
-    }
-
-    class Lancer
-    class Monk
-    class Goblin
-
-    class Seller {
-        -int WoodCounts
-        -int _coinCounts
-        -List~Transaction~ _transactions
-        +bool TryDiscountWood()
-        +void IncreaseCoin(int amount)
-    }
-
-    class Transaction {
-        <<abstract>>
-        +NPC NPC
-        +string NPCName
-        +int TotalCounts
-        +IncreaseTotal()
-    }
-
-    class Sale
-    class Theft
-
-    NPC <|-- Lancer
-    NPC <|-- Monk
-    NPC <|-- Goblin
-    IBuyer <|.. Lancer
-    IBuyer <|.. Monk
-    IThief <|.. Goblin
-    Transaction <|-- Sale
-    Transaction <|-- Theft
-    Seller *-- Transaction : compone / posee
+}
 ```
 
----
+- `NPC` concentra la inicialización del sprite y la reproducción de la animación base.
+- `Lancer`, `Monk` y `Goblin` heredan de `NPC`.
+- Se eliminó código repetido: cada NPC dejó de implementar por separado el mismo `_Ready()` y la misma referencia a `AnimatedSprite2D`.
+- El atributo `_animator` es `protected`: está encapsulado dentro de la jerarquía, pero sigue disponible para las clases hijas cuando lo necesiten.
+
+## 🔌 Paso 2 · Interfaces de comportamiento
+
+El segundo cambio separó la **identidad** de un NPC de sus **capacidades**:
+
+```csharp
+public interface IBuyer
+{
+    int Price { get; }
+    bool Buy(Seller seller);
+}
+
+public interface IThief
+{
+    bool Steal(Seller seller);
+}
+```
+
+- `IBuyer` identifica a cualquier NPC que puede comprar madera y expone su precio.
+- `IThief` identifica a cualquier NPC que puede robar madera.
+- Seller consulta `IBuyer` e `IThief` con *pattern matching*, en vez de preguntar si el objeto es un `Lancer`, `Monk` o `Goblin` específico.
+- Gracias a este desacoplamiento, agregar un nuevo comprador o ladrón no obliga a modificar la lógica principal de Seller.
+
+> 🔄 En el commit inicial, `Buy()` y `Steal()` no devolvían valor. En el paso 5 evolucionaron a `bool` para que Seller registre el historial únicamente cuando la operación sí tuvo éxito.
+
+> 📌 La base de estos dos pasos se puede revisar en el commit [`refactor`](https://github.com/pablodev14/seller-game/commit/c8db7a4).
 
 ## 🧘 Paso 3 · Monk como comprador
 
