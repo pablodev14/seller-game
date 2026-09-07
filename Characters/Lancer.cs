@@ -1,19 +1,10 @@
 using Godot;
-using System;
 
-public partial class Lancer : StaticBody2D
+public partial class Lancer : NPC, IBuyer
 {
-    private AnimatedSprite2D _animator;
+    [Export] private int _price = 1;
 
-    public override void _Ready()
-	{
-        _animator = GetNode<AnimatedSprite2D>("Animator");
-        _animator.Play("default");
-    }
-
-	public override void _Process(double delta)
-	{
-	}
+    public int Price => _price;
 
     public void Buy(Seller seller)
     {
