@@ -1,12 +1,19 @@
-# Seller Game · Taller de POO
+# 🪵 Seller Game · Taller de POO
 
-> Videojuego 2D desarrollado en **Godot 4** con **C#**. El proyecto aplica herencia, interfaces, encapsulamiento, composición y polimorfismo a las interacciones entre un vendedor y distintos NPC.
+<p align="center">
+  <img src="https://img.shields.io/badge/Godot-4.x-478cbf?logo=godotengine&logoColor=white" alt="Godot 4">
+  <img src="https://img.shields.io/badge/C%23-.NET-512BD4?logo=dotnet&logoColor=white" alt="C# y .NET">
+  <img src="https://img.shields.io/badge/POO-Herencia%20%2B%20Interfaces-f59e0b" alt="Programación orientada a objetos">
+  <img src="https://img.shields.io/badge/Estado-Completo-2ea44f" alt="Estado completo">
+</p>
 
-## Objetivo
+> 🎮 Videojuego 2D desarrollado en **Godot 4** con **C#**. El proyecto aplica herencia, interfaces, encapsulamiento, composición y polimorfismo a las interacciones entre un vendedor y distintos NPC.
+
+## 🎯 Objetivo
 
 El jugador controla a **Seller**, un vendedor que se acerca a NPC y presiona **X** para interactuar. Cada NPC expresa lo que puede hacer mediante interfaces: puede comprar madera o puede robarla. Además, Seller conserva un historial de las operaciones realizadas durante la partida.
 
-## Controles
+## 🕹️ Controles
 
 | Tecla | Acción |
 | :---: | --- |
@@ -14,7 +21,7 @@ El jugador controla a **Seller**, un vendedor que se acerca a NPC y presiona **X
 | `X` | Interactuar con el NPC cercano |
 | `Z` | Imprimir el historial de transacciones en la pestaña **Salida** de Godot |
 
-## Diseño orientado a objetos
+## 🧩 Diseño orientado a objetos
 
 ```mermaid
 classDiagram
@@ -70,7 +77,7 @@ classDiagram
 
 ---
 
-## Paso 3 · Monk como comprador
+## 🧘 Paso 3 · Monk como comprador
 
 `Monk` hereda de `NPC` e implementa `IBuyer`:
 
@@ -90,7 +97,7 @@ public partial class Monk : NPC, IBuyer
 - Monk tiene un precio distinto de Lancer. Al realizar una venta válida consume una madera, suma su precio a las monedas y desaparece de la escena.
 - `monk.tscn` fue instanciada en `world.tscn`, por lo que participa en el mundo como los demás NPC.
 
-## Paso 4 · Goblin como ladrón
+## 👺 Paso 4 · Goblin como ladrón
 
 `Goblin` hereda de `NPC` e implementa `IThief`:
 
@@ -111,7 +118,7 @@ La operación `TryDiscountWood()` pertenece a Seller porque Seller es dueño de 
 
 De esta forma el inventario nunca queda negativo y Goblin no accede ni modifica directamente los atributos internos de Seller.
 
-## Paso 5 · Historial de transacciones
+## 📚 Paso 5 · Historial de transacciones
 
 Se creó la clase abstracta `Transaction`, con los datos comunes de una operación:
 
@@ -153,7 +160,7 @@ Monk | Venta | Total: 1
 
 La tecla `Z` recorre la colección e imprime el historial en **Salida** de Godot.
 
-## Decisiones de diseño
+## ✨ Decisiones de diseño
 
 - **Sin tipos concretos en Seller:** no existe `is Lancer`, `is Monk` ni `is Goblin`. Seller pregunta por `IBuyer` o `IThief`.
 - **Encapsulamiento:** madera, monedas y contador de transacciones no pueden modificarse directamente desde otras clases. Seller ofrece métodos controlados como `TryDiscountWood()` e `IncreaseCoin(int amount)`.
@@ -161,14 +168,14 @@ La tecla `Z` recorre la colección e imprime el historial en **Salida** de Godot
 - **Sin números mágicos en Seller:** valores como la madera inicial y la velocidad se declaran como constantes con nombre.
 - **Responsabilidades separadas:** `_Process()` delega las entradas de interacción e historial a métodos privados. La lógica de cada capacidad vive en su NPC o en Seller, según corresponda.
 
-## Cómo ejecutar
+## 🚀 Cómo ejecutar
 
 1. Abrir el proyecto con Godot 4 instalado con soporte para C#/.NET.
 2. Compilar la solución desde **Compilar → Compilar solución**.
 3. Abrir `world.tscn` y ejecutar la escena con `F6`, o ejecutar el proyecto con `F5`.
 4. Interactuar con los NPC y revisar el historial en la pestaña **Salida**.
 
-## Pruebas manuales realizadas
+## ✅ Pruebas manuales realizadas
 
 - [x] Monk aparece en el mundo, compra madera y aplica un precio diferente al de Lancer.
 - [x] Goblin descuenta madera y refleja el cambio en el HUD.
