@@ -15,7 +15,6 @@ public partial class Monk : NPC, IBuyer
         }
 
         seller.IncreaseCoin(Price);
-        QueueFree();
 
         return true;
     }
