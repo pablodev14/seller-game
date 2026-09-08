@@ -88,7 +88,7 @@ public partial class Monk : NPC, IBuyer
 - La herencia evita repetir la configuración y comportamiento común de los NPC.
 - `IBuyer` representa la capacidad de comprar, no la identidad concreta de un personaje.
 - El precio es privado y se expone únicamente mediante `Price`; `[Export]` permite configurarlo desde el Inspector de Godot.
-- Monk tiene un precio distinto de Lancer. Al realizar una venta válida consume una madera, suma su precio a las monedas y desaparece de la escena.
+- Monk tiene un precio distinto de Lancer. Al realizar una venta válida consume una madera y suma su precio a las monedas.
 - `monk.tscn` fue instanciada en `world.tscn`, por lo que participa en el mundo como los demás NPC.
 
 ## 👺 Paso 4 · Goblin como ladrón
